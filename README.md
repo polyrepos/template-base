@@ -1,5 +1,7 @@
 # template bun
 
+Template for creating bun projects
+
 To install dependencies:
 
 ```bash
