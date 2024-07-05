@@ -1,6 +1,6 @@
 # template bun
 
-Template for creating bun projects 3
+Template for creating bun projects 4
 
 To install dependencies:
 
