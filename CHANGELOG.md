@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.12](https://github.com/polyrepos/template-base/compare/v1.3.11...v1.3.12) (2024-07-07)
+
+
+### Bug Fixes
+
+* change npm private false ([7609d3f](https://github.com/polyrepos/template-base/commit/7609d3fa09b2cca3676930c859973c966d5fe18e))
+
 ## [1.3.11](https://github.com/polyrepos/template-base/compare/v1.3.10...v1.3.11) (2024-07-07)
 
 
