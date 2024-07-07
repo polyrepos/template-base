@@ -45,6 +45,7 @@ jobs:
         run: bun unbuild
 
       - name: Authenticate to npm
+        if: env.GOON == 'true'
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Publish to npm
