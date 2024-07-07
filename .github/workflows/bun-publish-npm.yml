@@ -1,4 +1,4 @@
-name: publish_npm
+name: bun_publish_npm
 
 on:
   push:
@@ -10,8 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout bun
         uses: actions/checkout@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Get the last commit message
         id: get_commit
@@ -22,13 +26,11 @@ jobs:
         run: echo "${{ steps.get_commit.outputs.message }}" | grep -q "release-please" && echo "true" || echo "false"
         continue-on-error: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
       - name: Install dependencies
-        run: npm install
+        run: bun install
+
+      - name: Build
+        run: bun unbuild
 
       - name: Publish to npm
         if: steps.check_branch.outputs.result == 'true'
