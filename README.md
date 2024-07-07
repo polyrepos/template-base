@@ -2,6 +2,8 @@
 
 Template for creating bun projects
 
+### How to use
+
 Recommended to use polyrepo manger:
 
 ```sh
