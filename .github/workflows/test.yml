@@ -1,11 +1,13 @@
-name: bun-publish-npm
+name: test
 
 on:
   pull_request:
-    types: [closed]
+    branches:
+      - main
+      - dev
 
 jobs:
-  bun-publish-npm:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,11 +44,4 @@ jobs:
 
       - name: Build
         if: env.GOON == 'true'
-        run: bun unbuild
-
-      - name: Authenticate to npm
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
-      - name: Publish to npm
-        if: env.GOON == 'true'
-        run: npm publish --access public
+        run: bun pre-commit
