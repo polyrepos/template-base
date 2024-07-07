@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.10](https://github.com/polyrepos/template-base/compare/v1.3.9...v1.3.10) (2024-07-07)
+
+
+### Bug Fixes
+
+* update npm yml 9 ([4bf1dd2](https://github.com/polyrepos/template-base/commit/4bf1dd2a2701e864d77ddadf6151208d062e4bf1))
+
 ## [1.3.9](https://github.com/polyrepos/template-base/compare/v1.3.8...v1.3.9) (2024-07-07)
 
 
