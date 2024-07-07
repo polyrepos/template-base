@@ -20,4 +20,4 @@ jobs:
           # The short ref name of the branch or tag that triggered
           #  the workflow run. For example, `main` or `1.x`
           token: ${{ secrets.GH_TOKEN }}
-          target-branch: main
+          target-branch: ${{ github.ref_name }}
