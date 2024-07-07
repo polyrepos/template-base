@@ -1,4 +1,4 @@
-name: bun_publish_npm
+name: bun-publish-npm
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Check if PR title starts with chore-main-release
         id: check_pr_title
         run: |
-          if [[ "${{ github.event.pull_request.title }}" =~ ^chore\(main\):\ release ]]; then
+          if [[ "${{ github.event.pull_request.head.ref }}" =~ ^release-please--branches ]]; then
             echo "PR title matches"
             echo "PUBLISH=true" >> $GITHUB_ENV
           else
@@ -24,6 +24,7 @@ jobs:
         if: env.PUBLISH == 'true'
         uses: actions/checkout@v4
       - name: Install bun
+        if: env.PUBLISH == 'true'
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
