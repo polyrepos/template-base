@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/polyrepos/template-base/compare/v1.3.1...v1.3.2) (2024-07-07)
+
+
+### Bug Fixes
+
+* update npm yml ([de794ee](https://github.com/polyrepos/template-base/commit/de794ee8df6521a82369bcadf107e9905cc58a8f))
+
 ## [1.3.1](https://github.com/polyrepos/template-base/compare/v1.3.0...v1.3.1) (2024-07-07)
 
 
