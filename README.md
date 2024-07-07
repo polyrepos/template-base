@@ -16,6 +16,7 @@ In your project's package.json set:
 {
   "polyCopy": {
     "@polyrepo/template-base": [
+      "package.json.merge",
       ".github",
       "LICENSE",
       ".gitignore",
