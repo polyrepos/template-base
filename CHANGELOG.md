@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/polyrepos/template-base/compare/v1.2.0...v1.3.0) (2024-07-07)
+
+
+### Features
+
+* add release config ([7d2a81c](https://github.com/polyrepos/template-base/commit/7d2a81c05d72df03eaceed05c35d84ffdcfad47f))
+
+
+### Bug Fixes
+
+* add publish-npm ([8ce5c31](https://github.com/polyrepos/template-base/commit/8ce5c31cf1a2282ba97b442623b5d94971e6b7cb))
+* remove release config ([128e0ad](https://github.com/polyrepos/template-base/commit/128e0ad7ca5d020cb4a0a0016bba241271d5592f))
+
 ## [1.2.0](https://github.com/polyrepos/template-bun/compare/v1.1.0...v1.2.0) (2024-07-05)
 
 
