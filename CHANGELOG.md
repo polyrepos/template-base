@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.15](https://github.com/polyrepos/template-base/compare/v1.3.14...v1.3.15) (2024-07-07)
+
+
+### Bug Fixes
+
+* update ci ([67256b9](https://github.com/polyrepos/template-base/commit/67256b9e7871dbf60c282a335e2127f3b62c967c))
+
 ## [1.3.12](https://github.com/polyrepos/template-base/compare/v1.3.11...v1.3.12) (2024-07-07)
 
 ### Bug Fixes
