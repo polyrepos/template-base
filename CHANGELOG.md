@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/polyrepos/template-base/compare/v1.3.0...v1.3.1) (2024-07-07)
+
+
+### Bug Fixes
+
+* publish yml use bun ([3be5db9](https://github.com/polyrepos/template-base/commit/3be5db9aac88e1ec4eba6d667a5370a5a6496c5a))
+
 ## [1.3.0](https://github.com/polyrepos/template-base/compare/v1.2.0...v1.3.0) (2024-07-07)
 
 
