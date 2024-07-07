@@ -10,17 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check if PR title starts with chore-main-release
+      - name: Check if PR title starts with 'chore(main): release'
         id: check_pr_title
         run: |
-          if [[ "${{ github.event.pull_request.title }}" == chore\(main\):\ release* ]]; then
+          if [[ "${{ github.event.pull_request.title }}" =~ ^chore\(main\):\ release ]]; then
             echo "PR title matches"
-            echo "::set-output name=publish::true"
+            echo "PUBLISH=true" >> $GITHUB_ENV
           else
             echo "PR title does not match"
-            echo "::set-output name=publish::false"
+            echo "PUBLISH=false" >> $GITHUB_ENV
           fi
       - name: Checkout bun
+        if: env.PUBLISH == 'true'
         uses: actions/checkout@v4
       - name: Install bun
         uses: oven-sh/setup-bun@v2
@@ -28,16 +29,20 @@ jobs:
           bun-version: latest
 
       - name: Get the last commit message
+        if: env.PUBLISH == 'true'
         id: get_commit
         run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
 
       - name: Install dependencies
+        if: env.PUBLISH == 'true'
         run: bun install
 
       - name: Build
+        if: env.PUBLISH == 'true'
         run: bun unbuild
 
       - name: Publish to npm
+        if: env.PUBLISH == 'true'
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
