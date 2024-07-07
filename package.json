@@ -1,5 +1,5 @@
 {
-  "name": "@polyrepo/template-bun",
+  "name": "@polyrepo/template-base",
   "version": "1.2.0",
   "description": "Template for creating bun projects",
   "module": "src/index.ts",

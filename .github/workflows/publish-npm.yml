@@ -1,0 +1,37 @@
+name: publish_npm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get the last commit message
+        id: get_commit
+        run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
+
+      - name: Check if the branch was created by release-please
+        id: check_branch
+        run: echo "${{ steps.get_commit.outputs.message }}" | grep -q "release-please" && echo "true" || echo "false"
+        continue-on-error: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Publish to npm
+        if: steps.check_branch.outputs.result == 'true'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
