@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.8](https://github.com/polyrepos/template-base/compare/v1.3.7...v1.3.8) (2024-07-07)
+
+
+### Bug Fixes
+
+* update npm yml 7 ([3f6638a](https://github.com/polyrepos/template-base/commit/3f6638af1eb033fb6b59aba1adaa1da8d30ba8e1))
+
 ## [1.3.7](https://github.com/polyrepos/template-base/compare/v1.3.6...v1.3.7) (2024-07-07)
 
 
