@@ -1,6 +1,6 @@
 # template bun
 
-Template for creating bun projects.
+Template for creating bun projects
 
 ### How to use
 
