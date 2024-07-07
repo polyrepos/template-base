@@ -2,6 +2,12 @@
 
 Template for creating bun projects
 
+Recommended to use polyrepo manger:
+
+```sh
+npm i -g @polyrepos/polyrepo-manager
+```
+
 In your project's package.json set:
 
 ```json
@@ -23,4 +29,10 @@ In your project's package.json set:
     ]
   }
 }
+```
+
+Setup and run:
+
+```sh
+poly copy
 ```
