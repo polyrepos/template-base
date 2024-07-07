@@ -2,16 +2,25 @@
 
 Template for creating bun projects
 
-To install dependencies:
+In your project's package.json set:
 
-```bash
-bun install
+```json
+{
+  "polyCopy": {
+    "@polyrepo/template-base": [
+      ".github",
+      "LICENSE",
+      ".gitignore",
+      "biome.json",
+      ".husky",
+      "tsconfig.json",
+      "tsconfig.ci.json"
+    ],
+    "@polyrepo/template-full-stack": [
+      ".gitignore",
+      "biome.json",
+      "tsconfig.json"
+    ]
+  }
+}
 ```
-
-To run:
-
-```bash
-bun run unbuild
-```
-
-This project was created using `bun init` in bun v1.1.13. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
