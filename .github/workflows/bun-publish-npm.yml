@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  release:
+  bun_publish_npm:
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'chore(main): release')
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +22,6 @@ jobs:
         id: get_commit
         run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
 
-      - name: Check if the branch was created by release-please
-        id: check_branch
-        run: echo "${{ steps.get_commit.outputs.message }}" | grep -q "release-please" && echo "true" || echo "false"
-        continue-on-error: true
-
       - name: Install dependencies
         run: bun install
 
@@ -33,7 +29,6 @@ jobs:
         run: bun unbuild
 
       - name: Publish to npm
-        if: steps.check_branch.outputs.result == 'true'
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
